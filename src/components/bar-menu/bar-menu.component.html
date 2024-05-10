@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <button mat-icon-button [mat-menu-trigger-for]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu class="custom-border" #menu = "matMenu">
+      <button mat-menu-item>None</button>
+      <button (click)="navigateTo(item.route)" mat-menu-item *ngFor="let item of items" [value]="item.value">{{item.viewValue}}</button>
+  </mat-menu>
+    <span>Sports Store</span>
+    <span style="flex: 1 1 auto;" class="example-spacer"></span>
+    <button (click)="redirectToAnyPage('https://www.facebook.com/dvsportscr?locale=es_LA')" mat-icon-button class="example-icon favorite-icon" aria-label="Example facebook icon">
+      <mat-icon>facebook</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example instagram icon">
+      <mat-icon>translate</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="toggleDisplay()">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+  
